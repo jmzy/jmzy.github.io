@@ -14,6 +14,8 @@
 					x = acceleration.x;
 					y = acceleration.y;
 					if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
+						let supportsVibrate = "vibrate" in navigator;
+						navigator.vibrate([2000, 800]);
 						document.body.style.backgroundColor = color[Math.round(Math.random() * 10) % 6];
 					}
 					lastX = x;
